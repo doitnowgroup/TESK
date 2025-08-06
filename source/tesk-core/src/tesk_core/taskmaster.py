@@ -189,7 +189,7 @@ def init_pvc(data, filer):
         # Create a PVC object that references the existing shared PVC
         pvc = PVC(shared_pvc_name, 0, args.namespace)  # size 0 means don't create
         
-        mounts = generate_mounts(data, pvc)
+        #mounts = generate_mounts(data, pvc) avoid generating incompatible mounts for shared PVC 
         logging.debug(mounts)
         logging.debug(type(mounts))
         pvc.set_volume_mounts(mounts)
