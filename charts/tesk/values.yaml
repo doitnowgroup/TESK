@@ -22,7 +22,7 @@ tesk:
     image: docker.io/elixircloud/tesk-api:1.1.0
     port: 8080
     taskmaster_image_name: docker.io/neutry/tesk-core-taskmaster
-    taskmaster_image_version: "v1.14.1-bugfix"
+    taskmaster_image_version: "v1.14.2-pathfix"
     taskmaster_filer_image_name: docker.io/neutry/tesk-core-filer
     taskmaster_filer_image_version: v1.0.0-root
     debug: false
@@ -42,8 +42,8 @@ transfer:
     active: true
 
     # These paths are used for direct PVC mounting
-    wes_base_path: '/data'                    # Host path (Cromwell side)
-    tes_base_path: '/data'                    # Container path (Task side) - mount at /data
+    wes_base_path: '/data/cromwell'                    # Host path (Cromwell side)
+    tes_base_path: '/data/cromwell'                    # Container path (Task side) - mount at /data
     pvc_name: 'azurefile-cromwell-pvc'       # Force all tasks to use the shared PVC
 
 # Force storage settings for direct mounting
